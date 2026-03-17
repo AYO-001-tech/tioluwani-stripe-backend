@@ -57,6 +57,9 @@ module.exports = async (req, res) => {
       shipping_address_collection: {
         allowed_countries: ['GB'],
       },
+      metadata: {
+        order_items: JSON.stringify(items),
+      },
     });
 
     res.status(200).json({ url: session.url });
